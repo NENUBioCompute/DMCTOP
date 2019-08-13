@@ -1,7 +1,7 @@
 # DMCTOP
 
 The structure of deep multi-scale convolutional neural network is listed as follows.
-<p align="center"><img width="100%" src="image/cnn.png" /></p>
+<p align="center"><img width="100%" src="image/DMCNN.png" /></p>
 
 # Download data
 
