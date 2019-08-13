@@ -1,0 +1,34 @@
+DMCTOP
+Author: Yuning Yang
+Date: December 10th, 2018
+
+Description:
+This tool is using deep learning network to predict protein topology structure
+
+Please follow the following steps to execute the tool:
+1. user needs to install Blast+ tool(for executing psiblast: sudo apt-get install ncbi-blast+ ) and Tensorflow/Keras(for loading the deep network pretrained model purpose, that's it; no worry, there is no training involved)
+   
+2. the DMCTOP can make a topology structure prediction for your sequence. Please change following paths to suit your system:
+	1) set the Blast data bank location. e.g. 'set dbname = /home/ThirdPartTools/blast/db/uniref90.fasta' 
+	2) set the NCBI program location. e.g. 'set ncbidir = /home/ThirdPartTools/blast/bin'
+	3) set the DMCTOP program installed path. e.g. 'set execdir = /home/yangyn/DMCTOP/bin'
+	4) set the DMCTOP model path. e.g. 'set datadir = /home/yangyn/DMCTOP/data'
+
+3. Running PSI-BLAST with sequence:
+
+$psiblast -comp_based_stats 1 -evalue 0.001 -num_iterations 3 -db $dbname -query $xxxx.fasta -out_ascii_pssm $xxxx.profile
+
+4. Running DMCTOP program with sequence:
+> cd /home/yangyn/DMCTOP/example
+> ls
+> Q60175.fasta
+
+# cmd = python3 Executable.py -s /home/yangyn/DMCTOP/example/Q60175.fasta -p /home/yangyn/DMCTOP/example/Q60175.pssm -m /home/yangyn/DMCTOP/data/model.h5
+
+5. The prediction results will be displayed automatically. If you need to save the results, please specify the path yourself.
+
+Thank you and enjoy the tool!
+-Yuning Yang
+
+
+If you have any suggestions or questions, Please email me at yangyn533@nenu.edu.cn
